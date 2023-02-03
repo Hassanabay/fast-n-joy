@@ -1,0 +1,81 @@
+@import "colors";
+@import "media-queries";
+
+%aling-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  background-color: $light;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0.7, 0.7, 0.7, 0.7);
+
+  &-logo {
+    color: $dark;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 20px;
+    @extend %aling-center;
+  }
+  &-bars {
+    opacity: 0;
+    @include tablet {
+      opacity: 1;
+      font-size: 2rem;
+      color: $dark;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+  &-menu {
+    @extend %aling-center;
+    text-align: center;
+    margin-right: 20px;
+
+    @include tablet {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      @extend %aling-center;
+      justify-content: center;
+    }
+    &-links {
+      text-decoration: none;
+      @extend %aling-center;
+      color: $dark;
+      padding: 0 1rem;
+      justify-content: center;
+      font-size: 18px;
+      transition: color 0.5s;
+
+      &:hover {
+        color: $lime;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  p {
+    font-weight: 600;
+    margin-left: 35px;
+  }
+  &_log {
+    justify-content: center;
+    align-items: center;
+    line-height: 20px;
+    padding: 15px;
+  }
+}
+span {
+  color: $lime;
+}
